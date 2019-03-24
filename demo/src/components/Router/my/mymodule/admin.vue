@@ -8,8 +8,9 @@
         <span>昵称：{{item.name||'无'}}</span>
           </div>
           <div class="operation fr">
-            <a href="javascript:;" class="delete-want" @click="deleted(item._id)">删除用户</a>
+            <el-button type="text" @click="open2(item._id)">删除用户</el-button>
           </div>
+
         </li>
       </ul>
     </div>
@@ -23,11 +24,41 @@
             userlist:''
           }
         },
+        methods:{
+          open2(id) {
+            this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+              confirmButtonText: '确定',
+              cancelButtonText: '取消',
+              type: 'warning'
+            }).then(() => {
+              this.$ajax.delete("/user/delete?id="+id)
+                .then(res=>{
+                  if(res.data.state===1){
+                    this.$router.push({name:'transition',params:{'path':'user/admin'}})
+                    this.$message({
+                      type: 'success',
+                      message: '删除成功!'
+                    });
+                  }else{
+                    this.$message({
+                      type: 'info',
+                      message: '删除失败!'
+                    });
+                  }
+                })
+
+            }).catch(() => {
+              this.$message({
+                type: 'info',
+                message: '已取消删除'
+              });
+            });
+          }
+        },
         created(){
           this.$ajax.get('/user/users')
             .then(res=>{
               this.userlist = res.data.data
-              console.log(res.data.data);
             })
         }
     }
@@ -61,10 +92,9 @@
      height: 70px;
      padding-top: 35px;
    }
-   .operation a {
+   .operation >>> .el-button--text {
      display: block;
      text-align: center;
-     line-height: 25px;
      width: 90px;
      border: #e5e5e5 solid 1px;
      border-radius: 3px;

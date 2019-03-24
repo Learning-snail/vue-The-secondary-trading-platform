@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eef1afc8-ec7e-4909-9ddf-332638bfc10a" name="Default Changelist" comment="first">
+    <list default="true" id="eef1afc8-ec7e-4909-9ddf-332638bfc10a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/Schema/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/Schema/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/components/Router/log-regmodule/log-input/login-input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/components/Router/log-regmodule/log-input/login-input.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/components/Router/my/my.vue" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/components/Router/my/my.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/components/Router/my/mymodule/admin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/components/Router/my/mymodule/admin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/components/transitionpage/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/components/transitionpage/index.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -129,7 +132,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/src/components/Router/my/mymodule/admin.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
+            <state relative-caret-position="598">
               <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
             </state>
           </provider>
@@ -467,7 +470,7 @@
       <workItem from="1552953121937" duration="6521000" />
       <workItem from="1553075806304" duration="700000" />
       <workItem from="1553396441805" duration="7216000" />
-      <workItem from="1553413370359" duration="5749000" />
+      <workItem from="1553413370359" duration="6437000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1552309149033</created>
@@ -504,11 +507,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553413386959</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="first">
+      <created>1553424533406</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1553424533406</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301264000" />
+    <option name="totallyTimeSpent" value="301952000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -521,6 +531,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49892473" visible="true" weight="0.24438573" />
       <window_info id="Structure" order="1" sideWeight="0.50107527" side_tool="true" weight="0.24966975" />
@@ -535,7 +546,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30212766" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.31205675" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32907802" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -905,7 +916,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/src/components/Router/my/mymodule/admin.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
+        <state relative-caret-position="598">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
         </state>
       </provider>

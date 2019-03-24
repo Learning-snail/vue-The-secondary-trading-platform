@@ -8,6 +8,7 @@
       created(){
         let path= this.$route.params.path
           let key = this.$route.params.keywords
+        console.log(path);
         if( key ){
           this.$router.push({name:(path||'/'),query:{keywords:key}})
         }else{

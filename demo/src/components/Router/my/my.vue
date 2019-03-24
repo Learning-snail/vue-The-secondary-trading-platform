@@ -6,7 +6,7 @@
           <Userinfo></Userinfo>
           <img src="../../../../static/img/user.png" alt="">
           <div class="sider-nav">
-            <Left path="/user/admin" word="用户管理" icon="icon-shangpin"></Left>
+            <Left path="/user/admin" word="用户管理" icon="icon-shangpin" v-if="admin"></Left>
             <Left path="/user/index" word="我发布的" icon="icon-dingdan"></Left>
             <Left path="/user/want" word="我想要的" icon="icon-fox"></Left>
             <Left path="/user/message" word="我的留言" icon="icon-liuyan"></Left>
@@ -28,6 +28,16 @@
       components:{
         Userinfo,
         Left
+      },
+      data(){
+        return {
+          admin:false
+        }
+      },
+      created(){
+        if( window.localStorage.getItem('username')==='admin'){
+            this.admin=true
+        }
       }
 
     }

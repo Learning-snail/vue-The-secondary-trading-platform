@@ -24,8 +24,8 @@
         </form>
       </div>
       <div class="right  fr">
-        <p>已有淘二淘账号：</p>
-        <router-link :to="{name:'register'}">立即登录</router-link>
+        <p>没有淘二淘账号：</p>
+        <router-link :to="{name:'register'}">立即注册</router-link>
       </div>
     </div>
 </template>
