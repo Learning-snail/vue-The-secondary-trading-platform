@@ -29,9 +29,15 @@ exports.sercomment = async (ctx) =>{
  const announce = ctx.query.a||''
     if( receive ){
         ctx.body=await Comment.find({author:receive}).populate('article',{imgUrl:'imgUrl',shopname:'shopname'}).populate('from','username')
-
-
     }else{
         ctx.body=await Comment.find({from:announce}).populate('article',{imgUrl:'imgUrl',shopname:'shopname'})
+    }
+}
+//商品评论
+exports.shopcomment = async ctx=>{
+    const id = ctx.query.id
+    const data=await Comment.find({article:id}).populate('from',{avatar:'avatar',username:'username',name:'name'})
+    ctx.body = {
+        data
     }
 }

@@ -31,6 +31,8 @@ router.get('/user/myshop',user.myshop)
 router.delete('/shop/delete',shop.delete)
 //查询评论
 router.get('/comment/comment',comment.sercomment)
+//商品的评论
+router.get('/comment/shopcomment',comment.shopcomment)
 //上传我的头像
 router.post('/user/myavatar',avatar.single("file"),async(ctx,next)=>{
     ctx.body = {
