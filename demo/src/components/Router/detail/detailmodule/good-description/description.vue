@@ -3,6 +3,20 @@
     <div class="description-title">
       <span>二货留言</span>
     </div>
+    <!--留言-->
+    <div class="commentList">
+      <ul ref="commentlist">
+        <li v-for="(item,index) in (comment?comment:commentList)" :key="index">
+          <div>
+            <img :src="'http://127.0.0.1:3001'+item.from.avatar">
+            <span>用户:{{item.from.name?item.from.name:item.from.username}} 评论：</span>
+            <span>{{item.content}}</span>
+            <span class="floor">{{index+1}}楼</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!--描述-->
     <div class="descriptbody" >
       <div class="comment-list">
         <ul></ul>
@@ -37,11 +51,12 @@
 <script>
     export default {
       name: "description",
-      props: ["data"],
+      props: ["data",'commentList'],
       data() {
         return {
           textarea: '',
-          iff: false
+          iff: false,
+          comment:''
         }
       },
       methods: {
@@ -55,6 +70,12 @@
           }
           this.$ajax.post('user/comment',data)
             .then(res => {
+              if( res.data.status===1 ){
+                this.$ajax.get('/comment/shopcomment?id='+this.data._id)
+                  .then(res=>{
+                    this.comment=res.data.data
+                  })
+              }
               this.$message(res.data.message)
             })
           this.textarea=''
@@ -67,6 +88,26 @@
 </script>
 
 <style scoped>
+  .commentList ul li {
+    background-color: #fff;
+    /*border: #e5e5e5 solid 1px;*/
+    height: 70px;
+  }
+  .commentList ul li div{
+    line-height: 70px;
+    text-indent: 2em;
+    font-size: 16px;
+  }
+  .commentList ul li img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  .commentList ul li span.floor{
+    float: right;
+    color: #ccc;
+  }
   .description-title {
     border-bottom: #11cd6e solid 1px;
   }

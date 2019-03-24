@@ -3,7 +3,7 @@
       <hdNav></hdNav>
       <hdseacher></hdseacher>
       <div class="contain">
-        <Left :data="data" :username="username"></Left>
+        <Left :data="data" :username="username" :commentList="commentList"></Left>
         <Right :cateArr="cateArr"></Right>
       </div>
 
@@ -24,7 +24,8 @@
           data:'',
           username:'',
           select:'',
-          cateArr:''
+          cateArr:'',
+          commentList:''
         }
       },
       methods:{
@@ -35,12 +36,20 @@
               this.username=this.data.Userid.name||this.data.Userid.username;
               this.select=this.data.select
             })
-        }
+            .then(res=>{
+              this.$ajax.get('/comment/shopcomment?id='+this.data._id)
+                .then(res=>{
+                  this.commentList=res.data.data
+                })
+            })
+        },
+
       },
       watch: {
         $route(to, from) {
           if (to.fullPath !== from.fullPath) {
             this.ajax(to.params.id)
+
           }
         }
       },
@@ -53,7 +62,9 @@
                 this.cateArr=res.data.data.slice(0, 6)
               })
           })
+
       }
+
     }
 </script>
 

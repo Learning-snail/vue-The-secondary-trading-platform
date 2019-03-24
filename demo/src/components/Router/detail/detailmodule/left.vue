@@ -51,9 +51,8 @@
             </p>
           </div>
         </div>
-        <description :data="data"></description>
+        <description :data="data" :commentList="commentList"></description>
       </div>
-
     </div>
 </template>
 
@@ -66,7 +65,7 @@
         description,
         Alert
       },
-      props:['data','username'],
+      props:['data','username','commentList'],
       data(){
         return {
           params:this.$route.params.id,
