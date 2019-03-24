@@ -6,6 +6,7 @@ const upload = require('../utils/upload')
 const avatar = require('../utils/avatar')
 const comment =require('../control/comment')
 const want = require('../control/want')
+const admin = require('../control/admin')
 //注册
 router.post('/user/reg',user.reg)
 //登录
@@ -45,4 +46,9 @@ router.post('/want/want',want.want)
 router.get('/want/mywant',want.mywant)
 //删除我想要的
 router.delete('/want/delete',want.delete)
+//管理员查询用户
+admin.fn()
+router.get('/user/users',admin.userlist)
+//删除用户
+router.delete('/user/delete',admin.del)
 module.exports = router
