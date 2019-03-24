@@ -17,6 +17,7 @@ import My from '../components/Router/my/my'
   import Mywant from '../components/Router/my/mymodule/mywant'
   import Mymessage from '../components/Router/my/mymodule/mymessage'
   import Checkinfo from '../components/Router/my/mymodule/checkinfo'
+  import Admin from '../components/Router/my/mymodule/admin'
 // 数据请求
 import Axios from 'axios'
 Axios.defaults.baseURL = 'http://127.0.0.1:3001/'
@@ -98,6 +99,10 @@ export default new Router({
         {
           path:'/user/checkinfo',
           component:Checkinfo,
+        },
+        {
+          path:'/user/admin',
+          component:Admin,
         },
       ]
     },
