@@ -7,10 +7,10 @@
         name: "index",
       created(){
         let path= this.$route.params.path
-          let key = this.$route.params.keywords
-        console.log(path);
-        if( key ){
-          this.$router.push({name:(path||'/'),query:{keywords:key}})
+        let key = this.$route.params.keywords
+        let city = this.$route.params.city
+        if( key ||city){
+          this.$router.push({name:(path||'/'),query:{keywords:key,city:city}})
         }else{
           this.$router.push((path||'/'))
         }

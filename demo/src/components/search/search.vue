@@ -2,12 +2,20 @@
     <div id="search">
       <div class="header-bottom-wrap clearfix">
         <div class="city fl">
-          <a href="javascript:;">
-            全球
-            <i class="iconfont icon-xiajiantou"></i>
-          </a>
+          <!--<a href="javascript:;">-->
+            <!--全球-->
+            <!--<i class="iconfont icon-xiajiantou"></i>-->
+            <el-select v-model="value" placeholder="全球">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          <!--</a>-->
         </div>
-        <searchBox></searchBox>
+        <searchBox :value="value"></searchBox>
         <div class="publish fr">
           <router-link :to="{name:iff?'publish':'login'}" class="publish-btn">
             <i class="iconfont icon-pencil-copy"></i>
@@ -28,7 +36,15 @@
         },
         data(){
           return {
-            iff:window.localStorage.getItem('username')
+            iff:window.localStorage.getItem('username'),
+            options: [{
+              value: '天津',
+              label: '天津'
+            },{
+              value: '全球',
+              label: '全球'
+            }],
+            value: ''
           }
         },
 
@@ -48,8 +64,9 @@
     margin: 0 auto;
     height: 100%;
   }
-  .city a{
+  .city {
     display: inline-block;
+    overflow: hidden;
     height: 35px;
     width: 80px;
     margin-right: 20px;

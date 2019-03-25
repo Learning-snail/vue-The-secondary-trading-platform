@@ -131,12 +131,22 @@ exports.delete = async (ctx)=>{
 exports.search = async (ctx)=>{
     let keywords = ctx.query.keywords
     let p =ctx.query.p
+    let city = ctx.query.city
+    if( city==='全球' ){
+        city=''
+    }
     --p
     let query = new RegExp(keywords,'i')
-    // const maxNum = await Shop.find({$or:[{'shopname':query}]}).estimatedDocumentCount((err,num)=>err?console.log(err):num)
-    const maxNum = await Shop.find({$or:[{'shopname':query}]})
+    let params=new RegExp(city,'i')
+    const maxNum = await Shop.find({$or:[{'shopname':query,'myaddress':params}]})
+        // .then(data=>{
+        //     data.find({$or:[{'myaddress':params}]})
+        // })
         .then(data=>data.length)
-    const data = await Shop.find({$or:[{'shopname':query}]})
+    const data = await Shop.find({$or:[{'shopname':query,'myaddress':params}]})
+        // .then(data=>{
+        //     data.find({$or:[{'myaddress':params}]})
+        // })
         .sort('-created')
         .skip(15*p)
         .limit(15)

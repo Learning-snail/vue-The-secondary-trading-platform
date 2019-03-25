@@ -11,6 +11,7 @@
 <script>
     export default {
         name: "searchBox",
+        props:['value'],
         data(){
           return {
             txt:''
@@ -19,7 +20,8 @@
       methods:{
         search(){
           if( this.txt ){
-            this.$router.push({name:'transition',params:{path:'search',keywords:this.txt}})
+            // this.$router.push({name:'transition',params:{path:'search',keywords:this.txt,city:this.value}})
+            this.$router.push({name:'search',query:{keywords:this.txt,city:this.value}})
           }else{
             this.$message('请输入关键词')
           }
