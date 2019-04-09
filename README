@@ -1,6 +1,5 @@
 README
-============
-##分别打开demo和node的命令窗口输入npm i
-##打开node的database的命令窗口输入mongod --dbpath db
-##在node的命令窗口输入node app.js
-##在demo的命令窗口输入npm run dev
+分别打开demo和node的命令窗口输入npm i
+打开node的database的命令窗口输入mongod --dbpath db
+在node的命令窗口输入node app.js
+在demo的命令窗口输入npm run dev
